@@ -1,3 +1,0 @@
-#!/bin/bash
-
-	java -cp /media/Leandro/Projetos/bandex/ Bandex  $1
