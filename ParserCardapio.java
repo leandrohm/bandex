@@ -2,14 +2,12 @@
  *
  * @author Leandro Henrique Mendes
  */
-
 import java.io.InputStream;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
-
 
 public class ParserCardapio extends DefaultHandler {
 	private StringBuffer buffer;
@@ -24,12 +22,12 @@ public class ParserCardapio extends DefaultHandler {
 	}
 
 	public void parseDocument(InputStream filename) {
-		//get a factory
+		/* get a factory */
 		SAXParserFactory spf = SAXParserFactory.newInstance();
 		try {
-			//get a new instance of parser
+			/* get a new instance of parser */
 			SAXParser sp = spf.newSAXParser();
-			//parse the file and also register this class for call backs
+			/* parse the file and also register this class for call backs */
 			sp.parse(filename, this);
 		} catch (Exception e) {
 			System.err.println(e.getMessage());
@@ -43,7 +41,7 @@ public class ParserCardapio extends DefaultHandler {
 
 	public void endDocument() {}
 
-	//Event Handlers
+	/* Event Handlers */
 	public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
 		if(qName.equals(getData())){
 			var = true;
@@ -78,7 +76,7 @@ public class ParserCardapio extends DefaultHandler {
 		}
 
 		if (qName.equals(getData())) {
-			System.out.println(""); //So para ter um \n no final
+			System.out.println(""); /* Para melhor vizualizacao */
 			System.exit(0);
 		}
 	}

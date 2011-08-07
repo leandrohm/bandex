@@ -6,8 +6,7 @@ import java.net.*;
 import java.io.*;
 
 public class Robot {
-
-    //Pega o codigo de alguma página web
+    /*Pega o conteudo de um site qualquer*/
     public static InputStream getXML(String path) throws Exception {
         String buffer = "";
         URL url = new URL(path);
@@ -15,5 +14,4 @@ public class Robot {
         InputStream in = uconn.getInputStream();
         return in;
     }
-    
 }
