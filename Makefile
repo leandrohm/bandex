@@ -14,4 +14,4 @@ jar:
 
 clean:
 	rm -rf classes/*.class
-	rm -rf bandex.jar
+	rm -rf dist/bandex.jar
